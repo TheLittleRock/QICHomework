@@ -1,0 +1,115 @@
+%% LyX 2.3.7 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,oneside,english]{article}
+\usepackage{BP}
+
+\pgfplotsset{compat=1.18}
+%\tikzexternalize[prefix=tikz/] 
+
+\title{Homework 2}
+
+\begin{document}
+
+\maketitle
+
+\section*{Assignment 1}
+\begin{enumerate}[label=(\alph*)]
+    \item From general formula for matrix multiplication $C_{ij} = A_{ik}B_{ki}$ it follows:
+    \begin{equation}
+        (\rho^2)_{11} = \rho_{11}^2 + \rho_{12} \, \rho_{21} = |\alpha|^4 + p^2 |\alpha|^2 |\beta|^2,
+    \end{equation}
+    \begin{equation}
+        (\rho^2)_{22} = \rho_{22}^2 + \rho_{21} \, \rho_{12} = |\beta|^4 + p^2 |\alpha|^2 |\beta|^2.
+    \end{equation} 
+
+    Therefore:
+    \begin{equation}
+        \t{Tr}(\hat \rho^2) = |\alpha|^4 + |\beta|^4 + 2 p^2 |\alpha|^2 |\beta|^2
+    \end{equation}
+    \item For $p = 1$ the purity $\gamma$ is:
+    \begin{equation}
+        \gamma = |\alpha|^4 + |\beta|^4 + 2 |\alpha|^2 |\beta|^2 = (|\alpha|^2 + |\beta|^2)^2 = 1,
+    \end{equation}
+
+    this follows from the fact that $|\alpha|^2 + |\beta|^2$ is exactly the trace of $\hat \rho$ and hence is equal to 1.  
+    \item For $\alpha = \beta = \tfrac{1}{\sqrt{2}}$, the purity $\gamma = \t{Tr}(\hat \rho ^2)$ takes the form of:
+    \begin{equation}
+        \gamma = \t{Tr}(\hat \rho ^2) = \tfrac{1}{2}(1+p^2).
+    \end{equation}
+    The state is pure if and only if $\gamma = 1$, assuming that $p$ is real, that leads to $p = \pm 1$.
+    \item For $\alpha = 1$ and $\beta = 0$ purity does not depend on the parameter $p$. This can be obtained either from the fact that $\gamma = 1$ or from the density matrix, which for these $\alpha$ and $\beta$ takes the form $\hat \rho = \p{0}$ combined with the fact, that the density matrix composed of only one projector always represents the pure state.
+\end{enumerate}
+
+\section*{Assignment 2}
+    Density matrix $\hat \rho$ from task can be rewritten as: 
+    \begin{align*}
+        \hat \rho &= \tfrac{1}{2} \p{0} + \tfrac{1}{2} \p{+} \\[.3em]
+                  &= \tfrac{1}{2} \p{0} + \tfrac{1}{4} (\ket0 + \ket1)(\bra 0 + \bra 1) \\[.3em]
+                  &= \tfrac{3}{4} \p{0} + \tfrac{1}{4} \p{1} + \tfrac{1}{4} \pp{0}{1} + \tfrac{1}{4} \pp{1}{0}
+    \end{align*}
+    And therefore in matrix representation:
+    \begin{equation}
+        \begin{pmatrix*}
+            \tfrac{3}{4} & \tfrac{1}{4} \\
+            \tfrac{1}{4} & \tfrac{1}{4}
+        \end{pmatrix*}
+        \label{density_1}
+    \end{equation}
+    Von Neuman entropy can be expanded into eigenbasis $\{ \psi_i \}$ as follows:
+    \begin{align} \begin{split}
+        S &= -\t{Tr}(\hat \rho \ln \hat \rho) = -\t{Tr}(\textstyle \sum_i \lambda_i \ln \lambda_i \p{\psi_i}) = -\textstyle \sum_i \lambda_i \ln \lambda_i \t{Tr}(\p{\psi_i}) \\[.3em]
+          &= - \textstyle \sum_i \lambda_i \ln \lambda_i
+    \end{split} \end{align}
+    Eigenvalues of \eqref{density_1} are $\lambda_{1,2} = \tfrac{1}{2} \pm \tfrac{\sqrt{2}}{4}$ and entropy hence equals
+    \begin{equation}
+        S = - (\tfrac{1}{2} + \tfrac{\sqrt{2}}{4})\ln(\tfrac{1}{2} + \tfrac{\sqrt{2}}{4}) - (\tfrac{1}{2} - \tfrac{\sqrt{2}}{4})\ln(\tfrac{1}{2} - \tfrac{\sqrt{2}}{4}) = 0.42
+    \end{equation}
+
+\section*{Assignment 3}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Using spectral decomposition of pauli operators from table Tab. \ref{table:eigenpauli} we will rewrite $\hat \sigma_z \otimes \hat \sigma_x$.
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{c|c|c|c} 
+         Vl. číslo & $\sigma_x$ & $\sigma_y$ & $\sigma_z$ \\
+         \hline
+         \hline
+          & & & \\[-.3cm]
+         $\lambda = +1$ & $\ket{+} = \tfrac{1}{\sqrt{2}}$\bctr{1 \\ 1} & $\tfrac{1}{\sqrt{2}}$\bctr{1 \\ i} & $\ket 0 =$ \bctr{1 \\ 0}  \\
+         & & & \\
+        $\lambda = -1$ & $\ket{-} = \tfrac{1}{\sqrt{2}}$\bctr{1 \\ -1} & $\tfrac{1}{\sqrt{2}}$\bctr{1 \\ -i} & $\ket 1 =$ \bctr{0 \\ 1}\\
+        \end{tabular}
+        \caption{Tabulka popisující spektrum Pauliho operátorů.}
+        \label{table:eigenpauli}
+        \end{table}
+
+    Firstly we express $\p{+}$ and $\p{-}$ in computional basis:
+    \begin{align}
+        \p{+} &= \tfrac{1}{2}\big(\ket{0} + \ket{1}\big)\big(\bra{0} + \bra{1}\big) \\[.3em]
+              &= \tfrac{1}{2}\big(\p{0} + \p{1} + \pp{1}{0} + \pp{0}{1}\big) \\[1em]
+        \p{-} &= \tfrac{1}{2}\big(\ket{0} - \ket{1}\big)\big(\bra{0} - \bra{1}\big) \\[.3em]
+              &= \tfrac{1}{2}\big(\p{0} + \p{1} - \pp{1}{0} - \pp{0}{1}\big).
+    \end{align}
+
+    Now we can finally write $\hat \sigma_z \otimes \hat \sigma_x$ in terms of projectors on the computational basis. Big endian notation for shortened multiple qubit bras and kets is used.
+
+    \begin{align}
+        \hat \sigma_z \otimes \hat \sigma_x &= \big(\p{0} - \p{1}\big)\otimes\big(\p{+}-\p{-}\big) \\[.3em]
+        &= \big(\p{0} - \p{1}\big)\otimes\big(\pp{1}{0} + \pp{0}{1}\big) \\[.3em]
+        &= \pp{00}{01} + \pp{01}{00} - \pp{10}{11} - \pp{11}{10}
+    \end{align}
+
+    \item Now we have to evaluate expectation value of this operator in state $\phi^- = \tfrac{1}{\sqrt{2}} (\ket{00} - \ket{11})$:
+    
+    \begin{align}
+        \swch{\phi^-}{\hat \sigma_z \otimes \hat \sigma_x}{\phi^-} &= \tfrac{1}{2} (\bra{00} - \bra{11})\ \hat \sigma_z \otimes \hat \sigma_x\ (\ket{00} - \ket{11}) = 0
+    \end{align}
+
+    It is zero, because operator $\hat \sigma_z \otimes \hat \sigma_x$ does not contain any terms, that would be non zero. Non zero terms would have to be projectors formed only using kets from $\{ \ket{00},\, \ket{11} \}$ and bras from $\{ \bra{00}, \, \bra{11} \}$.
+    
+\end{enumerate}
+
+
+\end{document}

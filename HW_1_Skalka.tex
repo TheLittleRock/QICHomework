@@ -1,0 +1,114 @@
+%% LyX 2.3.7 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,oneside,english]{article}
+\usepackage{BP}
+
+\pgfplotsset{compat=1.18}
+%\tikzexternalize[prefix=tikz/] 
+
+\begin{document}
+
+\maketitle
+
+\section*{Assignment 1}
+Consider general orthogonal states $\ket e$ and $\ket f$:
+\begin{equation}
+    \ket e = \alpha \ket0 + \beta \ket1, \quad \ket f = \beta^* \ket0 - \alpha^* \ket1.
+\end{equation}
+Using Bloch sphere parametrization one can obtain:
+\begin{equation}
+    \ket e = \cos \tfrac{\theta}{2} \ket0 + e^{i\varphi} \sin \tfrac{\theta}{2} \ket 1
+    \label{e}
+\end{equation}
+\begin{equation}
+    \ket f = e^{-i\varphi} \sin \tfrac{\theta}{2} \ket 0 - \cos \tfrac{\theta}{2} \ket 1
+    \label{f} 
+\end{equation}
+
+\begin{figure}[h]
+    \centering
+    \scalebox{.9}{\bloch{3}} 
+\end{figure}
+
+Using global phase irrelevance and trigonometric identities it is possible to express state $\ket f$ as follows
+\begin{align}
+    \ket f &= e^{-i\varphi} \sin \tfrac{\theta}{2} \ket 0 - \cos \tfrac{\theta}{2} \ket 1 \\[.3em]
+           &= \sin \tfrac{\theta}{2} \ket 0 - e^{i\varphi} \cos \tfrac{\theta}{2} \ket 1 \\[.3em]
+           &= \sin \tfrac{\theta}{2} \ket 0 + e^{i\varphi} \cos (-\tfrac{\theta}{2}) \ket 1 \\[.3em]
+           &= \cos (\tfrac{\theta}{2}-\tfrac{\pi}{2}) \ket0 + e^{i\varphi} \sin (-\tfrac{\theta}{2} + \tfrac{\pi}{2} ) \ket 1 \\[.3em]
+           &= \cos (\tfrac{\theta}{2}-\tfrac{\pi}{2}) \ket0 - e^{i\varphi} \sin (\tfrac{\theta}{2} - \tfrac{\pi}{2} ) \ket 1 \\[.3em]
+           &= \cos (\tfrac{\theta}{2}-\tfrac{\pi}{2}) \ket0 + e^{i\pi} e^{i\varphi} \sin (\tfrac{\theta}{2} - \tfrac{\pi}{2} ) \ket 1 \\[.3em]
+           &= \cos (\tfrac{\theta}{2}-\tfrac{\pi}{2}) \ket0 + e^{i(\varphi + \pi)} \sin (\tfrac{\theta}{2} - \tfrac{\pi}{2} ) \ket 1 
+\end{align}
+
+Therefore, on Bloch sphere, state orthogonal to the one with coordinates $(\theta, \varphi)$ has coordinates $(\theta - \pi, \varphi + \pi)$ and hence is pointing in the opposite direction.
+
+\section*{Assignment 2}
+\begin{enumerate}[label=(\alph*)]
+    \item Density matrix $\hat \rho$ from task can be rewritten as: 
+    \begin{align*}
+        \hat \rho &= \tfrac{1}{2} \p{0} + \tfrac{1}{2} \p{+} \\[.3em]
+                  &= \tfrac{1}{2} \p{0} + \tfrac{1}{4} (\ket0 + \ket1)(\bra 0 + \bra 1) \\[.3em]
+                  &= \tfrac{3}{4} \p{0} + \tfrac{1}{4} \p{1} + \tfrac{1}{4} \pp{0}{1} + \tfrac{1}{4} \pp{1}{0}
+    \end{align*}
+    And therefore in matrix representation:
+    \begin{equation}
+        \begin{pmatrix*}
+            \tfrac{3}{4} & \tfrac{1}{4} \\
+            \tfrac{1}{4} & \tfrac{1}{4}
+        \end{pmatrix*}
+    \label{density_1}
+    \end{equation}
+    \item Bloch vector represents projectoin of density operator (minus identity) on Pauli vector:
+    \begin{equation}
+        \hat \rho = \hat I + \vec n \cdot \hat {\vec \sigma} = \frac{1}{2} \begin{pmatrix*} 1+n_z & n_x - in_y \\ n_x + in_y & 1 - n_z \end{pmatrix*}
+    \end{equation}
+    After comparison with \eqref{density_1} we obtain:
+    \begin{equation}
+        1+n_z = \tfrac{3}{2}, \quad 1-n_z = \tfrac{1}{2}, \quad n_x = \tfrac{1}{2}, \quad n_y = 0,
+    \end{equation}
+    which has the solution:
+    \begin{equation}
+        \vec n = \vctr{\tfrac{1}{2}\\0\\\tfrac{1}{2}}
+    \end{equation}
+\end{enumerate}
+
+\section*{Assignment 3}
+\begin{enumerate}[label=(\alph*)]
+    \item From general formula for matrix multiplication $C_{ij} = A_{ik}B_{ki}$ it follows:
+    \begin{equation}
+        (\rho^2)_{11} = \rho_{11}^2 + \rho_{12} \, \rho_{21} = |\alpha|^4 + p^2 |\alpha|^2 |\beta|^2,
+    \end{equation}
+    \begin{equation}
+        (\rho^2)_{22} = \rho_{22}^2 + \rho_{21} \, \rho_{12} = |\beta|^4 + p^2 |\alpha|^2 |\beta|^2.
+    \end{equation} 
+
+    Therefore:
+    \begin{equation}
+        \t{Tr}(\hat \rho^2) = |\alpha|^4 + |\beta|^4 + 2 p^2 |\alpha|^2 |\beta|^2
+    \end{equation}
+    \item For $p = 1$ the purity $\gamma$ is:
+    \begin{equation}
+        \gamma = |\alpha|^4 + |\beta|^4 + 2 |\alpha|^2 |\beta|^2 = (|\alpha|^2 + |\beta|^2)^2 = 1,
+    \end{equation}
+
+    this follows from the fact that $|\alpha|^2 + |\beta|^2$ is exactly the trace of $\hat \rho$ and hence is equal to 1.  
+    \item For $\alpha = \beta = \tfrac{1}{\sqrt{2}}$, the purity $\gamma = \t{Tr}(\hat \rho ^2)$ takes the form of:
+    \begin{equation}
+        \gamma = \t{Tr}(\hat \rho ^2) = \tfrac{1}{2}(1+p^2).
+    \end{equation}
+    The state is pure if and only if $\gamma = 1$, assuming that $p$ is real, that leads to $p = \pm 1$.
+    \item For $\alpha = 1$ and $\beta = 0$ purity does not depend on the parameter $p$. This can be obtained either from the fact that $\gamma = 1$ or from the density matrix, which for these $\alpha$ and $\beta$ takes the form $\hat \rho = \p{0}$ combined with the fact, that the density matrix composed of only one projector always represents the pure state.
+\end{enumerate}
+\section*{Assignment 4}
+    Von Neuman entropy can be expanded into eigenbasis $\{ \psi_i \}$ as follows:
+    \begin{align} \begin{split}
+        S &= -\t{Tr}(\hat \rho \ln \hat \rho) = -\t{Tr}(\textstyle \sum_i \lambda_i \ln \lambda_i \p{\psi_i}) = -\textstyle \sum_i \lambda_i \ln \lambda_i \t{Tr}(\p{\psi_i}) \\[.3em]
+          &= - \textstyle \sum_i \lambda_i \ln \lambda_i
+    \end{split} \end{align}
+    Eigenvalues of \eqref{density_1} are $\lambda_{1,2} = \tfrac{1}{2} \pm \tfrac{\sqrt{2}}{4}$ and entropy hence equals
+    \begin{equation}
+        S = - (\tfrac{1}{2} + \tfrac{\sqrt{2}}{4})\ln(\tfrac{1}{2} + \tfrac{\sqrt{2}}{4}) - (\tfrac{1}{2} - \tfrac{\sqrt{2}}{4})\ln(\tfrac{1}{2} - \tfrac{\sqrt{2}}{4}) = 0.42
+    \end{equation}
+
+\end{document}

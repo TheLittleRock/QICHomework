@@ -1,0 +1,185 @@
+% !TEX TS-program = pdflatex
+% !TEX options = --shell-escape
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=2cm,headheight=0.5cm,headsep=0.2cm,footskip=1cm}
+\pagestyle{headings}
+\setcounter{secnumdepth}{3}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{xfrac}
+\usetikzlibrary{angles, quotes, quantikz2}
+%\usetikzlibrary{external}
+\usepackage{pgfplots}
+\usepackage{subcaption}
+\usepackage{titlesec}
+\usepackage[indent = 0pt]{parskip}
+\usepackage{csquotes}
+\usepackage[font=footnotesize,labelfont=it, width = 0.9\textwidth]{caption}
+\usepackage[
+  backend=biber,        % if we want unicode and many other features (biber is already by default)
+  style=iso-numeric, % or another iso-<style>,
+  sorting=none
+]{biblatex}
+\addbibresource{Bibliografie.bib}
+\renewcommand*{\bibfont}{\footnotesize}
+
+\everymath{\displaystyle}
+\DeclareMathSizes{11}{11}{7}{5}
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\newenvironment{lyxlist}[1]
+	{\begin{list}{}
+		{\settowidth{\labelwidth}{#1}
+		 \setlength{\leftmargin}{\labelwidth}
+		 \addtolength{\leftmargin}{\labelsep}
+		 \renewcommand{\makelabel}[1]{##1\hfil}}}
+	{\end{list}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+%% Font setup: please leave the LyX font settings all set to 'default'
+%% if you want to use any of these packages:
+
+%% Use Times New Roman font for text and Belleek font for math
+%% Please make sure that the 'esint' package is turned off in the
+%% 'Math options' page.
+%\usepackage[varg]{txfonts}
+
+%% Use Utopia text with Fourier-GUTenberg math
+%\usepackage{fourier}
+
+%% Bitstream Charter text with Math Design math
+%\usepackage[charter]{mathdesign}
+
+\usepackage{mlmodern}        % Latin Modern family of fonts
+\usepackage[T1]{fontenc}  
+
+%%---------------------------------------------------------------------
+
+%% Make the multiline figure/table captions indent so that the second
+%% line "hangs" right below the first one.
+%\usepackage[format=hang]{caption}
+
+%% Indent even the first paragraph in each section
+\usepackage{indentfirst}
+
+%%---------------------------------------------------------------------
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+%%---------------------------------------------------------------------
+
+%% Disable page numbers in the TOC. LOF, LOT (TOC automatically
+%% adds \thispagestyle{chapter} if not overriden
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
+%\addtocontents{lof}{\protect\thispagestyle{empty}}
+%\addtocontents{lot}{\protect\thispagestyle{empty}}
+
+%% Shifts the top line of the TOC (not the title) 1cm upwards 
+%% so that the whole TOC fits on 1 page. Additional page size
+%% adjustment is performed at the point where the TOC
+%% is inserted.
+%\addtocontents{toc}{\protect\vspace{-1cm}}
+
+%%---------------------------------------------------------------------
+
+% completely avoid orphans (first lines of a new paragraph on the bottom of a page)
+\clubpenalty=9500
+
+% completely avoid widows (last lines of paragraph on a new page)
+\widowpenalty=9500
+
+% disable hyphenation of acronyms
+\hyphenation{CDFA HARDI HiPPIES IKEM InterTrack MEGIDDO MIMD MPFA DICOM ASCLEPIOS MedInria}
+
+\titleformat{\chapter}{\normalfont\bfseries\LARGE}{\thechapter}{1em}{}
+\titleformat{\section}{\bfseries\normalsize}{\thesection}{.2em}{}
+\makeatother
+\usepackage{babel}
+\usepackage{enumitem}
+
+% Definice bra-ketu
+\newcommand{\kett}[1]{|{#1}\rangle}
+\newcommand{\brat}[1]{\langle{#1}|}
+\newcommand{\bracket}[2]{\langle{#1} | {#2}\rangle}
+\newcommand{\swch}[3]{\langle{#1} | #2 | {#3} \rangle}
+\newcommand{\swich}[3]{\bra{#1} {#2} \ket{#3}}
+\newcommand{\s}[1]{\langle{#1}\rangle}
+\newcommand{\p}[1]{\ket{#1}\bra{#1}}
+\newcommand{\pp}[2]{\ket{#1}\bra{#2}}
+\newcommand{\ppt}[2]{\kett{#1}\brat{#2}}
+
+\newcommand{\comm}[2]{[ {#1},{#2} ]}
+
+\newcommand{\vctr}[1]{\ensuremath{\begin{pmatrix*}[r]#1\end{pmatrix*}}}
+\newcommand{\bctr}[1]{\ensuremath{\begin{bmatrix*}[r]#1\end{bmatrix*}}}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\t}[1]{\mathrm{#1}}
+
+\renewenvironment{psmallmatrix}
+  {\left(\begin{smallmatrix}}
+  {\end{smallmatrix}\right)}
+
+
+%kvuli zmene jazyka se pouziva \addto z babel....zmena Onrazek na Obr.
+%\addto\captionsczech{\renewcommand{\figurename}{Obr.}}
+%\addto\captionsczech{\renewcommand{\tablename}{Tab.}}
+
+\newcommand{\bloch}[1]{
+\begin{tikzpicture}
+
+  % Define radius
+  \def\r{3}
+
+  % Bloch vector
+  \draw (0, 0) node[circle, fill, inner sep=1, thick] (orig) {} -- (\r/2, \r/2) node[circle, fill, inner sep=0.7, label=above:$\ket{e}$] (a) {};
+  \draw[dashed] (orig) -- (\r/2, -\r/3.5) node (phi) {} -- (a);
+  \filldraw[color=black, fill=black!60](\r/2, \r/2) circle (0.05);
+
+  % Sphere
+  \draw (orig) circle (\r);
+  \draw[dashed] (orig) ellipse (\r{} and \r/3);
+
+  % Axes
+  \draw[->] (orig) -- ++(-\r/5+0.05, -\r/3+0.1) node[left, yshift = 5] (x) {$x$};
+  \draw[->] (orig) -- ++(\r, 0) node[right] (x2) {$y$};
+  \draw[->] (orig) -- ++(0, \r-0.15) node[right, yshift = -5] (z) {$z$};
+  %\draw[dashed] (orig) -- ++(0, -\r+0.15);
+
+  \filldraw[color=black, fill=black!5, thick](0,-\r) circle (0.1) node[below, yshift = -2] (ket1) {$\ket{1}$};
+  \filldraw[color=black, fill=black!5, thick](0,\r) circle (0.1) node[above, yshift = 2] (ket0) {$\ket{0}$};
+  \filldraw[color=black!75, fill=black!5, thick](-\r/5, -\r/3) circle (0.1) node[below, yshift = -5] (ket+) {$\ket{+}$};
+  \filldraw[color=black!75, fill=black!5, thick](\r/5, \r/3) circle (0.1) node[above, yshift = 5] (ket-) {$\ket{-}$};
+
+  % Angles
+  \pic [draw=black!60, text=black!75, ->, "$\varphi$"] {angle = x--orig--phi};
+  \pic [draw=black!60, text=black!75, <-, "$\theta$", angle eccentricity=1.4] {angle = a--orig--ket0};
+
+\end{tikzpicture}
+}
+
+
+\title{Homework 1}
+\author{Štěpán Skalka\\ %replace with your name
+02QIC}

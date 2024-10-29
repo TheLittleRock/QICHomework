@@ -1,0 +1,93 @@
+%% LyX 2.3.7 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,oneside,english]{article}
+\usepackage{BP}
+
+\pgfplotsset{compat=1.18}
+%\tikzexternalize[prefix=tikz/] 
+
+\title{Homework 3}
+
+\begin{document}
+
+\maketitle
+
+\section*{Assignment 1}
+General 2-qubit state can be expressed as:
+\begin{equation}
+   \ket{\psi} = a \ket{00} + b \ket{01} + c \ket{10} + d \ket{11}.
+   \label{stav2qbituniversal}
+\end{equation}
+If the state is separable following must also hold:
+\begin{align}
+    \ket{\psi} &= (\alpha \ket{0} + \beta \ket{1})\otimes(\gamma \ket{0} + \delta \ket{1}) \\[.2em]
+               &= \alpha \gamma \ket{00} + \alpha \delta \ket{01} + \beta \gamma \ket{10} + \beta \delta \ket{11}
+\end{align}
+
+Comparing with \eqref{stav2qbituniversal} leads to system of equation that is solvable iff
+\begin{equation}
+    ad - cd = 0.
+\end{equation}
+This is therefore sufficient (and due to binary nature of information about separability also necessary) condition for separability.
+
+\begin{enumerate}[label=(\alph*)]
+    \item $ad - bc = 0 - 0 = 0$, state is \textbf{separable}.
+    \item $ad-bc = 1-1 = 0$, state is \textbf{separable}.
+    \item $ad-bc = -9 + 1 = -8$, state is \textbf{entangled}.
+    
+\end{enumerate}
+
+\section*{Assignment 2}
+Reduced density operators $\rho_A = \t{Tr}_B(\p{\psi})$ and and $\rho_B = \t{Tr}_A(\p{\psi})$ can be easily obtained from projector $\p{\psi}$:
+\begin{align*}
+    \p{\psi} &= \big[\  9\p{00} + \p{01} + \p{10} + 9\p{11}\\
+             &\  + 3\pp{00}{01} - 3\pp{00}{10} - 9 \p{00}{11}\\
+             &\  + 3\pp{01}{00} - \pp{01}{10} -3\pp{01}{11}\\
+             &\  - 3\pp{10}{00} - \pp{10}{01} + 3\pp{10}{11}\\
+             &\  - 9\pp{11}{00} - 3\pp{11}{01} + 3\pp{11}{10} \big].
+\end{align*}
+Taking the projections needed to get traces one obtains $\rho_A$:
+\begin{align}
+    \rho_A &= \sum_i \bra{i_B}  \big(\p{\psi}\big) \ket{i_B} \\[.3em]
+           &=\tfrac{1}{20} \big[ 10 \p{0} + 10 \p{1} -6\pp{0}{1} -6\pp{1}{0} \big]
+\end{align}
+and $\rho_B$:
+\begin{align} \begin{split}
+    \rho_B &= \sum_i \bra{i_B} \big(\p{\psi}\big) \ket{i_B} \\[.3em]
+           &=\tfrac{1}{20} \big[ 10 \p{0} + 10 \p{1} +6\pp{0}{1} +6\pp{1}{0} \big].
+        \end{split} \end{align} 
+Which translates to:
+\begin{equation}
+    \rho_A = \begin{pmatrix*}[r] \tfrac{1}{2} & -\tfrac{3}{10}  \\[.4em] -\tfrac{3}{10}  & \tfrac{1}{2}  \end{pmatrix*}, \quad
+    \rho_B = \begin{pmatrix} \tfrac{1}{2} & \tfrac{3}{10}  \\[.5em] \tfrac{3}{10}  & \tfrac{1}{2}  \end{pmatrix}.
+\end{equation}
+
+Theese reduced density matricies can indeed be used to determine whether the state is entangled or not. State is separable if and only if reduced density matricies are density matricies of pure state.
+\begin{equation}
+    \t{Tr}(\rho^2_A) = \t{Tr}(\rho^2_B) = \tfrac{68}{100} \neq 1
+\end{equation}
+Trace of the square of the reduced matricies is not equal to 1. Therefore they are not pure density matricies and state $\ket \psi$ is entangled.
+
+Theorem above is easily proved. Consider Schmidt decomposition of state $\ket \psi$:
+
+\begin{equation}
+    \ket \psi=\sum_{i}\lambda_{i} \ket i_{A} \ket i_{B}.
+\end{equation}
+Density matrix then takes form
+\begin{equation}
+    \rho=\p{\psi} = \sum_{i}\lambda_{i}^{2} \p{i_A} \otimes \p{i_B}.
+\end{equation}
+Reduced density matrix is then calculated as:
+\begin{align} \begin{split}
+    \rho_A &= \t{Tr}_B(\rho) = \sum_{i}\lambda_{i}^{2} \,\t{Tr}_B(\ \p{i_A} \otimes \p{i_B} \,) \\[.3em] &= \sum_{i}\lambda_{i}^{2} \, \p{i_A} \t{Tr}_B(\  \p{i_B} \,) = \sum_{i}\lambda_{i}^{2} \, \p{i_A},
+\end{split} \end{align}
+for $\rho_B$:
+\begin{equation}
+    \rho_B = \t{Tr}_A(\rho) = \sum_{i}\lambda_{i}^{2} \, \p{i_B}.
+\end{equation}
+If state $\ket \psi$ is separable, then it has Schmidt number 1. Therefore only one of $\lambda_i$ is not zero. Thus $\rho_A = \p{i_A}$, $\rho_B = \p{i_B}$ and so resuced density matricies represent pure states.
+
+On the other hand, if $\rho_A = \p{i_A}$ and $\rho_B = \p{i_B}$ are pure, it implies $\rho_A = \p{i_A}$, $\rho_B = \p{i_B}$. From equations above it follows that, the schmidt number must be 1 and state is therefore separable.  
+
+
+\end{document}
