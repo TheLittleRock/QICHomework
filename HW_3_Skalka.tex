@@ -89,5 +89,61 @@ If state $\ket \psi$ is separable, then it has Schmidt number 1. Therefore only 
 
 On the other hand, if $\rho_A = \p{i_A}$ and $\rho_B = \p{i_B}$ are pure, it implies $\rho_A = \p{i_A}$, $\rho_B = \p{i_B}$. From equations above it follows that, the schmidt number must be 1 and state is therefore separable.  
 
+\section*{Assignment 3}
+Expectation value $\s{ab}$ can be easily obtained by sandwiching operator
+\begin{equation}
+    \sigma_a \otimes \sigma_b = \sigma_z \otimes (\cos \theta \, \sigma_z + \sin \theta \, \sigma_x) =  \cos \theta \, \sigma_z \otimes \sigma_z + \sin \theta \, \sigma_z \otimes \sigma_x.
+\end{equation}
+Operator $\sigma_a \otimes \sigma_b$ applied on $\ket \psi$ gives:
+\begin{equation}
+    \sigma_a \otimes \sigma_b \ket \psi = \tfrac{1}{\sqrt{2}}\big(\sin \theta \,(\ket{00} - \ket{11}) - \cos \theta \, (\ket{01} + \ket{10} ) \big)
+\end{equation}
+and therefore 
+\begin{equation}
+    \s{ab} = \swch{\psi}{\sigma_a \otimes \sigma_b }{\psi} = - \tfrac{1}{2} \cos \theta (\bracket{01}{01} + \bracket{10}{10}) = -\cos \theta.
+\end{equation}
+
+\section*{Assignment 4}
+Proof of the statement is based on the fact that iransformations between orthonormal basis are unitary. Since states $\ket \psi$ and $\ket \varphi$ have same Schmidt numbers, they can differ only in their Schmidt bases. Suppose therefore following expansions:
+\begin{equation}
+    \ket \psi = \sum_i \lambda_i \ket{i_A} \ket{i_B}, \quad \ket \varphi = \sum_j \lambda_j \ket{j_A} \ket{j_B}.
+\end{equation}
+States $\ket{i_A}$ and $\ket{j_A}$ (and for B states likewise) form two equivalent bases. Transformations between theese two bases are realised by unitary transformation $U$ (respectively $V$):
+\begin{equation}
+    \ket{i_A} = U \ket{j_A}, \quad \ket{i_B} = V \ket{j_B}.
+\end{equation}
+For Schmidt decomposition of $\ket \psi$ it then follows:
+\begin{equation}
+    \ket \psi = \sum_i \lambda_i \ket{i_A} \ket{i_B} = \sum_j \lambda_j \, U \ket{j_A} \otimes V \ket{j_B} = (U \otimes V) \sum_j \lambda_j \ket{j_A} \ket{j_B} = (U \otimes V) \ket \varphi.
+\end{equation}
+
+\section*{Assignment 5}
+Entanglement measure is defined as entrophy of reduced density matrix. Applying unitary uperator on Alenas qubit corresponds with applying operator $U \otimes I$ on state $\psi$. Transformation of density operator is therefore:
+\begin{equation}
+    \rho^\prime = \p{\psi^\prime} = (U \otimes I) \p{\psi} (U \otimes I)^\dag = U_A \, \rho \, U_A^\dag
+\end{equation}
+as expected since $\rho$ is operator. Transformation of reduced density matricies $\rho_A$ then follows:
+\begin{equation}
+    \rho_A^\prime = \t{Tr}_B(U_A \, \rho \, U_A^\dag) = U_A \, \t{Tr}_B(\rho) \, U_A^\dag = U_A \, \rho_A \, U_A^\dag,
+\end{equation}
+and for $\rho_B$ using the fact that partial trace is cyclic in space on which it acts and unitarity property $U_A^\dag U_A = 1$:
+\begin{eqnarray}
+    \rho_B^\prime = \t{Tr}_A(U_A \, \rho \, U_A^\dag) = \t{Tr}_A(U_A \, \rho \, U_A^\dag) = \t{Tr}_A(\rho \, U_A^\dag U_A) = \t{Tr}_A(\rho) = \rho_B.
+\end{eqnarray}
+Then for entaglement $E(\ket \psi)$ we get:
+\begin{equation}
+    E(\ket \psi^\prime) = \t{Tr}_A(\rho_A^\prime \ln{}\rho^\prime_A) = \t{Tr}_A[ U_A \, \rho_A \, U_A^\dag  \ln{} (U_A \, \rho_A \, U_A^\dag) ].
+\end{equation}
+For function of operator it holds that unitary transformation can be taken out of the argument:
+\begin{eqnarray}
+    f(A^\prime) = f(U_A \, A \, U_A^\dag) = U_A f(A) U_A^\dag,
+\end{eqnarray}
+this is direct consequence of either spectral decomposition and the that fact the unitary transformation does not change eigenvalues or of the Taylor expansion and observation that $(U_A \, A \, U_A^\dag)^n = U_A \, A^n \, U_A^\dag$ which can be proven inductively. 
+This with cyclic property of the trace implies for the entanglement entrophy $E$:
+\begin{align} \begin{split}
+    E(\ket \psi^\prime) &= \t{Tr}_A[ U_A \, \rho_A \, U_A^\dag U_A \ln{} (\rho_A)\,U_A^\dag ] = \t{Tr}_A[ U_A \, \rho_A \, \ln{} (\rho_A)U_A^\dag ] \\ 
+    &= \t{Tr}_A( \rho_A \, \ln{} (\rho_A)U_A^\dag U_A ) = \t{Tr}_A(\rho_A \, \ln{} \rho_A) = E(\ket \psi)
+\end{split} \end{align}
+and entanglement therefore remains unaltered.
 
 \end{document}

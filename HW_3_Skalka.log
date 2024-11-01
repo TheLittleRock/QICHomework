@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  22 OCT 2024 20:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.30)  29 OCT 2024 21:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1187,7 +1187,7 @@ LaTeX Font Info:    External font `mlmex10' loaded for size
 (Font)              <6> on input line 17.
  [1
 
-{C:/Users/stepa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [2] (HW_3_Skalka.aux)
+{C:/Users/stepa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [2] [3] (HW_3_Skalka.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1199,17 +1199,17 @@ Package logreq Info: Writing requests to 'HW_3_Skalka.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45929 strings out of 474485
- 1044390 string characters out of 5743734
+ 45944 strings out of 474485
+ 1044612 string characters out of 5743734
  1993968 words of memory out of 5000000
- 67427 multiletter control sequences out of 15000+600000
+ 67429 multiletter control sequences out of 15000+600000
  601593 words of font info for 85 fonts, out of 8000000 for 9000
  1152 hyphenation exceptions out of 8191
  99i,18n,145p,1991b,1785s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmbx12.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmex10.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmmi12.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmmi8.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmr12.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmr17.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmr8.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmsy10.pfb>
-Output written on HW_3_Skalka.pdf (2 pages, 120666 bytes).
+<C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmbx12.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmex10.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmmi12.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmmi8.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmr12.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmr17.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmr8.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmsy10.pfb><C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmsy8.pfb>
+Output written on HW_3_Skalka.pdf (3 pages, 141731 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 19 named destinations out of 1000 (max. 500000)
+ 110 PDF objects out of 1000 (max. 8388607)
+ 32 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

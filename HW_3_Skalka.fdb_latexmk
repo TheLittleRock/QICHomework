@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber HW_3_Skalka"] 0 "HW_3_Skalka.bcf" "HW_3_Skalka.bbl" "HW_3_Skalka" 1729620139.24419 0
+["biber HW_3_Skalka"] 0 "HW_3_Skalka.bcf" "HW_3_Skalka.bbl" "HW_3_Skalka" 1730234260.05018 0
   "Bibliografie.bib" 0 -1 0 ""
   "HW_3_Skalka.bcf" 0 -1 0 "pdflatex"
   (generated)
   "HW_3_Skalka.bbl"
   "HW_3_Skalka.blg"
   (rewritten before read)
-["pdflatex"] 1729620135.5023 "c:/Users/stepa/Desktop/FJFI/QIC/LaTeX/HW_3_Skalka.tex" "HW_3_Skalka.pdf" "HW_3_Skalka" 1729620139.24528 0
+["pdflatex"] 1730234256.2617 "c:/Users/stepa/Desktop/FJFI/QIC/LaTeX/HW_3_Skalka.tex" "HW_3_Skalka.pdf" "HW_3_Skalka" 1730234260.05261 0
   "BP.sty" 1728334341 6135 c46df6f9bc8c97357a28cfc47e224248 ""
   "C:/Users/stepa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1724623767 584028 bded66b3ec6397f8a6eed67e422eaa42 ""
   "C:/Users/stepa/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1722349536 24225087 9a4e63bd595b197f3abbd43e18ba590e ""
@@ -59,6 +59,7 @@
   "C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmr17.pfb" 1610963690 108135 3022bf23704f18f9380b55aea3b06ec4 ""
   "C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmr8.pfb" 1610963690 106758 1f7f7470ab4d23d709edaffa2c43d637 ""
   "C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmsy10.pfb" 1610963692 33568 1229f51de832265c06b3cbc7c344e81f ""
+  "C:/Users/stepa/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlmsy8.pfb" 1610963692 33461 d002e2fb4fa522af5dd785c29b95f36d ""
   "C:/Users/stepa/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/stepa/AppData/Local/Programs/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "C:/Users/stepa/AppData/Local/Programs/MiKTeX/tex/generic/babel/babel.sty" 1704647332 150008 7a05b0fdc0167c04e192003e780ab195 ""
@@ -301,12 +302,12 @@
   "C:/Users/stepa/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/stepa/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/stepa/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
-  "HW_3_Skalka.aux" 1729620138 385 ca912a804ee328c82f8f20190a5d8e40 "pdflatex"
+  "HW_3_Skalka.aux" 1730234259 385 c74d71d695614d836da86d0a5c4651a3 "pdflatex"
   "HW_3_Skalka.bbl" 0 -1 0 "biber HW_3_Skalka"
-  "HW_3_Skalka.out" 1729620138 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "HW_3_Skalka.run.xml" 1729620138 2496 8b17a557eb4d8c1da2b3db0b1821c60c "pdflatex"
-  "HW_3_Skalka.tex" 1729620132 4307 f826b11b3622fa544c305b0ddb7a9f5d ""
-  "c:/Users/stepa/Desktop/FJFI/QIC/LaTeX/HW_3_Skalka.tex" 1729620132 4307 f826b11b3622fa544c305b0ddb7a9f5d ""
+  "HW_3_Skalka.out" 1730234258 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "HW_3_Skalka.run.xml" 1730234259 2496 8b17a557eb4d8c1da2b3db0b1821c60c "pdflatex"
+  "HW_3_Skalka.tex" 1730234255 8188 f9f496ebb3f1ecc83cc458b612d5fd0d ""
+  "c:/Users/stepa/Desktop/FJFI/QIC/LaTeX/HW_3_Skalka.tex" 1730234255 8188 f9f496ebb3f1ecc83cc458b612d5fd0d ""
   (generated)
   "HW_3_Skalka.aux"
   "HW_3_Skalka.bcf"
